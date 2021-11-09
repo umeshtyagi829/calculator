@@ -29,13 +29,13 @@ python3 main.py
 <img src="calculator_ui.png" alt="ui"/>
 
 #### Updated-Front-End
-<img src="output_screenshots/updated_calculator_ui.png" alt="updated_ui"/>
+<img src="output_screenshots/update_calculator_ui.png" alt="updated_ui"/>
 
 #### Controller
 <img src="output_screenshots/controller.png" alt="controller"/>
 
 #### Calculation
-<img src="output_screenshots/alculation.png" alt="calculation"/>
+<img src="output_screenshots/calculation.png" alt="calculation"/>
 
 #### Output
 <img src="output_screenshots/output.png" alt="output"/>

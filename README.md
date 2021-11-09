@@ -26,7 +26,7 @@ python3 main.py
 
 ## Sample outputs
 #### Front-End
-<img src="calculator_ui.png" alt="ui"/>
+<img src="output_screenshots/calculator_ui.png" alt="ui"/>
 
 #### Updated-Front-End
 <img src="output_screenshots/update_calculator_ui.png" alt="updated_ui"/>

@@ -6,7 +6,7 @@ It's allow to make mathematical(addition, substration, multiplication, and divis
 ## Installation 
 1. Clone this repository 
 ```
-git clone https://github.com/umeshtyagi829/GUI-Calculator.git
+git clone https://github.com/umeshtyagi829/calculator.git
 ```
 2. Navigate the project directory 
 ```

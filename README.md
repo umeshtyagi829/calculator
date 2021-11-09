@@ -10,7 +10,7 @@ git clone https://github.com/umeshtyagi829/calculator.git
 ```
 2. Navigate the project directory 
 ```
-cd GUI-Calculator
+cd calculator
 ```
 3. Install required dependenices to your system
 ```

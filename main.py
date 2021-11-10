@@ -3,8 +3,6 @@ from calculator import PyCalcUi
 from calculator import PyCalcCtrl
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
-from PyQt5 import QtCore, QtGui
-from PyQt5.QtGui import *
 
 ERROR_MSG = 'ERROR'
 

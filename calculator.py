@@ -34,13 +34,12 @@ class PyCalcUi(QMainWindow):
         # Create the display widget
         self.display = QLineEdit()
         # Set some display's properties
-        self.display.setFixedHeight(35)
+        self.display.setFixedHeight(40)
         self.display.setAlignment(Qt.AlignRight)
         self.display.setReadOnly(True)
         font = self.display.font()
         font.setPointSize(30)
         self.display.setFont(font)
-        self.display.resize(266, 70)
         # Add the display to the general layout
         self.generalLayout.addWidget(self.display)
 
@@ -50,16 +49,30 @@ class PyCalcUi(QMainWindow):
         buttonsLayout = QGridLayout()
         # Button text | position on the QGridLayout
         buttons = {
-            "7": (0, 0), "8": (0, 1), "9": (0, 2), "/": (0, 3), "C": (0, 4), "X": (0, 5),
-            "4": (1, 0), "5": (1, 1), "6": (1, 2), "*": (1, 3), "(": (1, 4),
-            "1": (2, 0), "2": (2, 1), "3": (2, 2), "-": (2, 3), ")": (2, 4),
-            "0": (3, 0), "00": (3, 1),".": (3, 2), "+": (3, 3), "=": (3, 4),
+            "7": (0, 0), "8": (0, 1), "9": (0, 2), "X": (0, 3), "C": (0, 4), "/": (0, 5),
+            "4": (1, 0), "5": (1, 1), "6": (1, 2), "(": (1, 3), "*": (1, 4),
+            "1": (2, 0), "2": (2, 1), "3": (2, 2), ")": (2, 3), "-": (2, 4),
+            "0": (3, 0), "00": (3, 1),".": (3, 2), "+": (3, 3), 
         }
         # Create the buttons and add them to the grid layout
         for btnText, pos in buttons.items():
             self.buttons[btnText] = QPushButton(btnText)
             self.buttons[btnText].setFixedSize(40, 40)
             buttonsLayout.addWidget(self.buttons[btnText], pos[0], pos[1])
+        #creating equal push button
+        self.push_equal = QPushButton("=", self) 
+        self.push_equal.setFixedSize(80,40)
+        buttonsLayout.addWidget(self.push_equal, 3,4)
+
+        #creating push multiply push button
+        self.push_mul = QPushButton("*", self) 
+        self.push_mul.setFixedSize(80,40)
+        buttonsLayout.addWidget(self.push_mul, 1,4)
+        #creating minus push button
+        self.push_minus = QPushButton("-", self) 
+        self.push_minus.setFixedSize(80,40)
+        buttonsLayout.addWidget(self.push_minus, 2,4)
+        
         # Add buttonsLayout to the general layout
         self.generalLayout.addLayout(buttonsLayout)
 
@@ -111,7 +124,7 @@ class PyCalcCtrl:
             if btnText not in {'=', 'C', 'X'}:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
 
-        self._view.buttons['='].clicked.connect(self._calculateResult)
+        self._view.push_equal.clicked.connect(self._calculateResult)
         self._view.display.returnPressed.connect(self._calculateResult)
         self._view.buttons['C'].clicked.connect(self._view.clearDisplay)
         self._view.buttons['X'].clicked.connect(self._view.delSingleDigit)
